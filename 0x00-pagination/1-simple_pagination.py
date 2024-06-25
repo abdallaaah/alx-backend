@@ -5,10 +5,10 @@ import csv
 import math
 from typing import List
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """function return tuble"""
     return ((page - 1) * page_size, page * page_size)
-
 
 
 class Server:
@@ -29,6 +29,3 @@ class Server:
             self.__dataset = dataset[1:]
 
         return self.__dataset
-
-    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            pass
