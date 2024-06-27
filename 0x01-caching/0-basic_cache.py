@@ -7,9 +7,8 @@ class BasicCache(BaseCaching):
     """inherit from the parent class BaseCaching"""
     def put(self, key, item):
         """Put in the dict"""
-        if key and item:
-            if key not in self.cache_data.keys():
-                self.cache_data[key] = item
+        if key and item is not None:
+            self.cache_data[key] = item
 
     def get(self, key):
         """Get from the dict"""
