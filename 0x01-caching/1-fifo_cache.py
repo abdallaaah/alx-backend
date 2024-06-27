@@ -7,15 +7,16 @@ from collections import OrderedDict
 class FIFOCache(BaseCaching):
     """inherit from the parent class BaseCaching"""
     def __init__(self):
-        self.cache_data = OrderedDict()
+
         super().__init__()
+        self.cache_data = OrderedDict()
 
     def put(self, key, item):
         """Put in the dict"""
         if key is not None and item is not None:
-            if len(self.cache_data) > self.MAX_ITEMS:
-                self.cache_data.pop(key, "default value")
-                print(f"DISCARD: {key}")
+            if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+                discard, _ = self.cache_data.popitem(last=False)
+                print(f"DISCARD: {discard}")
             self.cache_data[key] = item
 
     def get(self, key):
