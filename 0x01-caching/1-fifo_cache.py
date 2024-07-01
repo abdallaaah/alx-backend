@@ -8,7 +8,6 @@ class FIFOCache(BaseCaching):
     def __init__(self):
         super().__init__()
         self.cache_data = OrderedDict()
-        print(self.cache_data)
 
     def put(self, key, item):
         """the put in the dict function"""
