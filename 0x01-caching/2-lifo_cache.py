@@ -5,6 +5,7 @@ from collections import OrderedDict
 
 
 class LIFOCache(BaseCaching):
+    """class inherit from the parent"""
     def __init__(self):
         super().__init__()
         self.cache_data = OrderedDict()
