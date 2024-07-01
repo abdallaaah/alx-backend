@@ -15,9 +15,11 @@ class FIFOCache(BaseCaching):
         """Put in the dict"""
         if key is not None and item is not None:
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-                discard, _ = self.cache_data.popitem(last=True)
+                discard, _ = self.cache_data.popitem(last=False)
                 print(f"DISCARD: {discard}")
             self.cache_data[key] = item
+        else:
+            return
 
     def get(self, key):
         """Get from the dict"""
