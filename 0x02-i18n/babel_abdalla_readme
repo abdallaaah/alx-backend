@@ -1,0 +1,23 @@
+to genereate translate:
+
+0- use the syntax on template _('')
+
+1- create babel.cfg 
+	[python: **.py]
+	[jinja2: **/templates/**.html]
+	extensions=jinja2.ext.autoescape,jinja2.ext.with_
+
+2- Then initialize your translations with
+	pybabel extract -F babel.cfg -o messages.pot .
+
+3- and your two dictionaries with 
+	pybabel init -i messages.pot -d translations -l en
+	pybabel init -i messages.pot -d translations -l fr
+
+4- write the translation manualy or with po file translatio program like odoo
+
+5- Then compile your dictionaries with
+	pybabel compile -d translations
+	
+	
+I PROVIDE YOU A PHOTO IN THE SAME DIRECTORY WITH TASK FROM ALX THAT HAVE THIS STEPS
